@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Wishlist</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Your Wishlist</h1>
+    <a href="home.html">Back to Home</a>
+  </header>
+  
+  <main>
+    <div id="wishlist-items"></div> <!-- Wishlist items will be displayed here -->
+  </main>
+
+  <!-- Modal Structure -->
+  <div id="wishlist-modal" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); background:white; padding:20px; border:1px solid #ccc; z-index:1000;">
+    <h2>Item Details</h2>
+    <div id="wishlist-modal-content"></div> <!-- Wishlist item details will be displayed here -->
+    <button onclick="closeModal()">Close</button>
+  </div>
+
+  <script>
+    // Fetch wishlist from localStorage
+    let wishlist = JSON.parse(localStorage.getItem('userWishlist')) || [];
+
+    // Function to display wishlist items
+    function displayWishlistItems() {
+      const wishlistContainer = document.getElementById('wishlist-items');
+      if (wishlist.length === 0) {
+        wishlistContainer.innerHTML = '<p>Your wishlist is empty.</p>';
+      } else {
+        wishlistContainer.innerHTML = '';  // Clear previous items
+        wishlist.forEach((item, index) => {
+          const itemElement = document.createElement('div');
+          itemElement.classList.add('wishlist-item');
+          itemElement.innerHTML = `
+            <img src="${item.image}" alt="${item.name}" style="width: 300px;" />
+            <h3><a href="${item.link}" class="watch-link">${item.name}</a></h3>
+            <button onclick="showItemDetails(${index})">View Details</button>
+            <button onclick="removeFromWishlist(${index})">Remove</button>
+          `;
+          wishlistContainer.appendChild(itemElement);
+        });
+      }
+    }
+
+    // Function to show item details in a modal
+    function showItemDetails(index) {
+      const item = wishlist[index];
+      const modalContent = document.getElementById('wishlist-modal-content');
+      modalContent.innerHTML = `
+        <img src="${item.image}" alt="${item.name}" style="width: 300px;" />
+        <h3>${item.name}</h3>
+        <p>${item.description}</p>
+        <p>Rating: ${item.rating}</p>
+      `;
+      document.getElementById('wishlist-modal').style.display = 'block';
+    }
+
+    // Function to close the modal
+    function closeModal() {
+      document.getElementById('wishlist-modal').style.display = 'none';
+    }
+
+    // Function to remove item from wishlist
+    function removeFromWishlist(index) {
+      wishlist.splice(index, 1); // Remove the item from the array
+      localStorage.setItem('userWishlist', JSON.stringify(wishlist)); // Save to correct localStorage key
+      displayWishlistItems(); // Refresh the displayed items
+    }
+
+    // Initial call to display wishlist
+    displayWishlistItems();
+  </script>
+</body>
+</html>

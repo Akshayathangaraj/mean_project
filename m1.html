@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> OBLVLO Watch</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+   
+        <!-- Navigation bar -->
+        <nav>
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html">About Us</a></li>
+            <li><a href="index.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="logo">
+          <img src="logo.png" alt="WatchStore Logo" width="150">
+        </div>
+        <div class="sign">
+          <a href="sign.html" class="sign-btn">Sign Up / Sign In</a>
+        </div>
+      </div>
+  </header>
+
+  <main>
+    <section id="productPage">
+      <center><img src="m1.jpg" alt="Luxury Watch 1" width="300"></center>
+      <h2>Watch Description</h2>
+  <ul>
+    <p><strong>Brand:</strong> OBLVLO</p>
+    <li><strong>Case:</strong></li>
+      <ul>
+        <li>Material: Rose gold-plated stainless steel</li>
+        <li>Size: Appears to be 42-44mm</li>
+        <li>Shape: Round</li>
+        <li>Finish: Polished</li>
+      </ul>
+    <li><strong>Dial:</strong></li>
+      <ul>
+        <li>Color: Silver</li>
+        <li>Indices: Roman numerals and Arabic numerals</li>
+        <li>Hands: Rose gold-plated</li>
+        <li>Subdials: Three subdials for chronograph functions</li>
+        <li>Date window: At 3 o'clock</li>
+      </ul>
+    <li><strong>Movement:</strong></li>
+      <ul>
+        <li>Type: Automatic</li>
+        <li>Functions: Hours, minutes, seconds, chronograph, date</li>
+      </ul>
+    <li><strong>Bracelet:</strong></li>
+      <ul>
+        <li>Material: Brown leather</li>
+        <li>Style: Croco-embossed</li>
+        <li>Clasp: Buckle clasp</li>
+      </ul>
+    <li><strong>Features:</strong></li>
+      <ul>
+        <li>Chronograph function with start, stop, and reset buttons</li>
+        <li>Date display</li>
+        <li>Transparent case back to showcase the movement</li>
+      </ul>
+    <li><strong>Overall:</strong></li>
+      <ul>
+        <li>The OBLVLO watch showcases a classic and sophisticated design with a focus on functionality. The rose gold-plated case and brown leather strap create a timeless and elegant look. The chronograph feature adds a sporty element, making it suitable for both formal and casual occasions.</li>
+      </ul>
+  </ul>
+      <p><strong>Price: 599.99</strong></p>
+      <p>Rating:</p>
+      <div class="watch-rating">★★★★☆ (4.5)</div>
+      <div class="watch-actions">
+        <button class="wishlist-btn">Add to Wishlist</button>
+        <button class="cart-btn">Add to Cart</button>
+      </div>
+    </section>
+  </main>
+  <script>
+    document.querySelectorAll('.wishlist-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        alert('Added to Wishlist!');
+      });
+    });
+    
+    document.querySelectorAll('.cart-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        alert('Added to Cart!');
+      });
+    });
+      </script>
+  <script src="script.js"></script>
+</body>
+</html>

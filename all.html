@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luxury Watch 1 - WatchStore</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+   
+        <!-- Navigation bar -->
+        <nav>
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html">About Us</a></li>
+            <li><a href="index.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="logo">
+          <img src="logo.png" alt="WatchStore Logo" width="150">
+        </div>
+        <div class="sign">
+          <a href="sign.html" class="sign-btn">Sign Up / Sign In</a>
+        </div>
+      </div>
+  </header>
+  <main>
+    <section id="homePage">
+      <h2>OUR COLLECTIONS</h2>
+      <div class="trending-watches">
+        <div class="watch-card-container">
+          
+          <div class="watch-card">
+            <img src=".jpg" alt="Watch 1" class="watch-image">
+            <h3 class="watch-name"><a href=".html">Luxury Watch 1</a></h3>
+            <p class="watch-description">Stylish luxury watch with leather strap.</p>
+            <div class="watch-rating">★★★★☆ (4.5)</div>
+            <div class="watch-actions">
+              <button class="wishlist-btn">Add to Wishlist</button>
+              <button class="cart-btn">Add to Cart</button>
+            </div>
+          </div>
+          
+        </div>
+       </div>
+    </section>
+   </main>
+  <script>
+    document.querySelectorAll('.wishlist-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        alert('Added to Wishlist!');
+      });
+    });
+    
+    document.querySelectorAll('.cart-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        alert('Added to Cart!');
+      });
+    });
+      </script>
+  <script src="script.js"></script>
+</body>
+</html>

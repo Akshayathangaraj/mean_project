@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WatchStore - Buy Watches Online</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+        <nav>
+          <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav><br><br><br>
+        <div class="logo">
+          <img src="logo.png" alt="WatchStore Logo" width="150">
+        </div>
+        <div class="sign" "log">
+          <a href="sign.html" class="sign-btn">Sign Up</a>
+          <a href="login.html" class="sign-btn">Log-In</a>
+        </div>
+        <div class="icons">
+          <a href="wishlist.html">
+          <span class="wishlist-icon" onclick="showWishlist()">❤️ (<span id="wishlist-count">0</span>)</span></a>
+          <a href="cart.html">
+          <span class="cart-icon" onclick="showCart()">🛍️ (<span id="cart-count">0</span>)</span></a>
+        </div>
+        
+      </div>
+  </header>
+
+  <main>
+    <section id="homePage">
+      <h2>Trending Watches</h2>
+      <div class="trending-watches">
+        <div class="watch-card-container">
+          
+          <div class="watch-card">
+            <img src="w1.jpg" alt="Watch 1" class="watch-image">
+            <h3 class="watch-name"><a href="watch1.html">Rolex Watch</a></h3>
+            <p class="watch-description">Timeless and versatile timepiece </p>
+            <div class="watch-rating">★★★★☆ (4.5)</div>
+            <div class="watch-actions">
+              <button class="wishlist-btn" onclick="addToWishlist(event)">Add to Wishlist</button>
+              <button class="cart-btn" onclick="addToCart(event)">Add to Cart</button>
+            </div>
+          </div>
+            <div class="watch-card">
+              <img src="w2.jpg" alt="Watch 1" class="watch-image">
+              <h3 class="watch-name"><a href="w2.html">Rolex Watch</a></h3>
+              <p class="watch-description">Sophisticated and stylish timepiece</p>
+              <div class="watch-rating">★★★★☆ (4.5)</div>
+              <div class="watch-actions">
+                <button class="wishlist-btn" onclick="addToWishlist(event)">Add to Wishlist</button>
+              <button class="cart-btn" onclick="addToCart(event)">Add to Cart</button>
+              </div>
+          </div>
+          <div class="watch-card">
+            <img src="w3.jpg" alt="Watch 1" class="watch-image">
+            <h3 class="watch-name"><a href="w3.html">Daniel Wellington Watch</a></h3>
+            <p class="watch-description"> Classic and versatile timepiece</p>
+            <div class="watch-rating">★★★★☆ (4.5)</div>
+            <div class="watch-actions">
+              <button class="wishlist-btn" onclick="addToWishlist(event)">Add to Wishlist</button>
+              <button class="cart-btn" onclick="addToCart(event)">Add to Cart</button>
+            </div>
+        </div>
+        <div class="watch-card">
+          <img src="w4.jpg" alt="Watch 1" class="watch-image">
+          <h3 class="watch-name"><a href="w4.html" >Chanel Watch</a></h3>
+          <p class="watch-description">Luxurious and iconic timepiece </p>
+          <div class="watch-rating">★★★★☆ (4.5)</div>
+          <div class="watch-actions">
+            <button class="wishlist-btn" onclick="addToWishlist(event)">Add to Wishlist</button>
+              <button class="cart-btn" onclick="addToCart(event)">Add to Cart</button>
+          </div>
+      </div>
+<!-- Categories Section -->
+<h1 class="watch-name"><a href="all.html">OUR COLLECTIONS</a></h1>
+<br><br><br><br><br><br><br>
+<div class="category watch-card">
+  <img src="m1.jpg" alt="Men's Watch" class="watch-image" />
+  <h3 class="watch-name"><a href="m1.html">Men's Elegant Watch</a></h3>
+  <p class="watch-description">Sophisticated and stylish watch for men</p>
+  <p class="watch-rating">★★★★☆ (4.5)</p>
+  <div class="watch-actions">
+    <button class="wishlist-btn" onclick="addToWishlist(event)">Add to Wishlist</button>
+    <button class="cart-btn" onclick="addToCart(event)">Add to Cart</button>
+  </div>
+</div>
+
+<div class="category watch-card">
+  <img src="m5.jpg" alt="Women's Watch" class="watch-image" />
+  <h3 class="watch-name"><a href="m2.html">Women's Stylish Watch</a></h3>
+  <p class="watch-description">Elegant and trendy watch for women</p>
+  <p class="watch-rating">★★★★☆ (4.0)</p>
+  <div class="watch-actions">
+    <button class="wishlist-btn" onclick="addToWishlist(event)">Add to Wishlist</button>
+    <button class="cart-btn" onclick="addToCart(event)">Add to Cart</button>
+  </div>
+</div>
+
+<div class="category watch-card">
+  <img src="m3.jpg" alt="Children's Watch" class="watch-image" />
+  <h3 class="watch-name"><a href="m3.html">Children's Fun Watch</a></h3>
+  <p class="watch-description">Bright and colorful watch for kids</p>
+  <p class="watch-rating">★★★★★ (5.0)</p>
+  <div class="watch-actions">
+    <button class="wishlist-btn" onclick="addToWishlist(event)">Add to Wishlist</button>
+    <button class="cart-btn" onclick="addToCart(event)">Add to Cart</button>
+  </div>
+</div>
+
+<div class="category watch-card">
+  <img src="m6.jpg" alt="Elder's Watch" class="watch-image" />
+  <h3 class="watch-name"><a href="m4.html">Elder's Classic Watch</a></h3>
+  <p class="watch-description">Traditional watch for the elderly</p>
+  <p class="watch-rating">★★★★☆ (4.2)</p>
+  <div class="watch-actions">
+    <button class="wishlist-btn" onclick="addToWishlist(event)">Add to Wishlist</button>
+    <button class="cart-btn" onclick="addToCart(event)">Add to Cart</button>
+  </div>
+</div>
+
+    </section>
+  </main>
+  <section id="home">
+  </section>
+  <section id="about">
+    <h2>About Us</h2>
+    <p>WatchStore is the leading provider of luxury and trendy watches for everyone. We curate the best collections from top brands, ensuring quality and elegance on every wrist.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Have any questions? Feel free to reach out!</p>
+    <ul>
+      <li><strong>Address:</strong> 208/ 6d,Manthithoppu road,Kovilpatti-628502,TamilNadu,INDIA</li>
+      <li>Email: <a href="mailto:support@montre.com">support@montre.com</a></li>
+      <li>Phone: 96008 07729</li>
+    </ul>
+  </section>
+  
+
+  <script>
+
+// Initialize wishlist and cart from localStorage
+// Initialize guest wishlist and cart from localStorage
+let guestWishlist = JSON.parse(localStorage.getItem('guestWishlist')) || [];
+let guestCart = JSON.parse(localStorage.getItem('guestCart')) || [];
+
+// Update the icons with initial counts
+document.getElementById('wishlist-count').textContent = guestWishlist.length;
+document.getElementById('cart-count').textContent = guestCart.length;
+
+// Function to add item to guest wishlist
+function addToWishlist(event) {
+  const item = getItemData(event);
+  guestWishlist.push(item);
+  localStorage.setItem('guestWishlist', JSON.stringify(guestWishlist));
+  document.getElementById('wishlist-count').textContent = guestWishlist.length;
+  alert('Added to Guest Wishlist!');
+}
+
+// Function to add item to guest cart
+function addToCart(event) {
+  const item = getItemData(event);
+  guestCart.push(item);
+  localStorage.setItem('guestCart', JSON.stringify(guestCart));
+  document.getElementById('cart-count').textContent = guestCart.length;
+  alert('Added to Guest Cart!');
+}
+
+
+// Function to extract watch data (for wishlist and cart)
+// Function to extract watch data (for wishlist and cart)
+function getItemData(event) {
+  const watchCard = event.target.closest('.watch-card');
+  const name = watchCard.querySelector('.watch-name a').textContent;  // Get the watch name
+  const description = watchCard.querySelector('.watch-description').textContent;
+  const rating = watchCard.querySelector('.watch-rating').textContent;
+  const image = watchCard.querySelector('.watch-image').src;
+  const link = watchCard.querySelector('.watch-name a').href;  // Get the link from the watch name
+
+  return { name, description, rating, image, link };  // Include link in the returned object
+}
+
+function showWishlist() {
+  let wishlistItems = JSON.parse(localStorage.getItem('wishlist')) || [];
+  let output = "";
+
+  wishlistItems.forEach(item => {
+    // Add each item as a clickable link
+    output += `<div>
+      <a href="${item.link}">${item.name}</a><br>
+    </div>`;
+  });
+
+  document.getElementById('wishlist-modal-content').innerHTML = output;
+  document.getElementById('wishlist-modal').style.display = 'block';  // Show modal
+}
+
+function showCart() {
+  let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+  let output = "";
+
+  cartItems.forEach(item => {
+    // Add each item as a clickable link
+    output += `<div>
+      <a href="${item.link}">${item.name}</a><br>
+    </div>`;
+  });
+
+  document.getElementById('cart-modal-content').innerHTML = output;
+  document.getElementById('cart-modal').style.display = 'block';  // Show modal
+}
+// Function to close the modal
+function closeModal(modalId) {
+  document.getElementById(modalId).style.display = 'none';
+}
+
+</script>
+  <script src="script.js"></script>
+  
+</body>
+</html>

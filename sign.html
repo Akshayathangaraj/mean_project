@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angular Form Validation</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <style>
+        .error { color: red; }
+        body {
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            height: 100vh; /* Full height of the viewport */
+            margin: 0; /* Remove default margin */
+        }
+        form {
+            display: flex;
+            flex-direction: column; /* Stack elements vertically */
+            width: 300px; /* Fixed width for the form */
+            padding: 20px; /* Padding inside the form */
+            border: 1px solid #ccc; /* Optional border */
+            border-radius: 5px; /* Rounded corners */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+        input {
+            margin: 10px 0; /* Space between inputs */
+            padding: 10px; /* Padding inside the input fields */
+            border: 1px solid #ccc; /* Border for input fields */
+            border-radius: 4px; /* Rounded corners for input fields */
+        }
+        .error {
+            color: red;
+            text-align: center; /* Center error message */
+            margin-top: 10px; /* Space above the error message */
+        }
+    </style>
+</head>
+<body ng-app="formApp" ng-controller="FormController">
+<center>
+    <form ng-submit="validateForm()" novalidate>
+        <label for="name">Name:</label>
+        <input type="text" id="name" ng-model="formData.name" required><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" ng-model="formData.email" required><br>
+
+        <label for="phone">Phone:</label>
+        <input type="text" id="phone" ng-model="formData.phone" required><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" ng-model="formData.password" required><br>
+
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" ng-model="formData.confirmPassword" required><br>
+
+        <button type="submit">Register</button>
+        <p>Already have an account? <a href="login.html">Login</a></p>
+    </form>
+</center>
+    <div class="error" ng-if="errorMessage">{{ errorMessage }}</div>
+
+    <script>
+        angular.module('formApp', [])
+            .controller('FormController', ['$scope', '$http', function($scope, $http) {
+                $scope.formData = {};
+                $scope.errorMessage = '';
+
+                $scope.validateForm = function() {
+                    const { name, email, phone, password, confirmPassword } = $scope.formData;
+
+                    // Basic validation for empty fields
+                    if (!name || !email || !phone || !password || !confirmPassword) {
+                        $scope.errorMessage = 'Please fill in all fields.';
+                        return;
+                    }
+
+                    // Validate email format
+                    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailPattern.test(email)) {
+                        $scope.errorMessage = 'Please enter a valid email address.';
+                        return;
+                    }
+
+                    // Validate phone number (must be exactly 10 digits)
+                    const phonePattern = /^[0-9]{10}$/;
+                    if (!phonePattern.test(phone)) {
+                        $scope.errorMessage = 'Please enter a valid 10-digit phone number.';
+                        return;
+                    }
+
+                    // Validate password (at least 6 characters, 1 uppercase, 1 special character)
+                    const passwordPattern = /^(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.{6,})/;
+                    if (!passwordPattern.test(password)) {
+                        $scope.errorMessage = 'Password must be at least 6 characters long and include at least one uppercase letter and one special character.';
+                        return;
+                    }
+
+                    // Validate that passwords match
+                    if (password !== confirmPassword) {
+                        $scope.errorMessage = 'Passwords do not match.';
+                        return;
+                    }
+
+                    // If validation passes, send data to backend
+                    $http.post('http://localhost:4000/register', $scope.formData)
+    .then(function(response) {
+        alert('Registration successful!');
+        window.location.href = 'index.html'; // Navigate to index.html after form submission
+    })
+    .catch(function(error) {
+        // Check if the error response has a specific message
+        if (error.data && error.data.error) {
+            $scope.errorMessage = error.data.error; // Use the error message from the server
+        } else {
+            $scope.errorMessage = 'Registration failed. Please try again.'; // Fallback message
+        }
+    });
+
+                };
+            }]);
+    </script>
+</body>
+</html>

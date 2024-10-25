@@ -1,0 +1,14 @@
+<html>
+ <section id="signupPage" style="display:none;">
+      <h2>Sign Up</h2>
+      <form id="signupForm" onsubmit="return validateForm()">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" required>
+        <button type="submit">Register</button>
+      </form>
+    </section>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body ng-controller="MainController">
+
+    <header>
+        <div class="container">
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav><br>
+            <div class="logo">
+                <img src="logo.png" alt="WatchStore Logo" width="150">
+            </div>
+           <!-- <div class="icons">
+                <a href=".html">
+                    <span class="wishlist-icon">❤️ (<span id="wishlist-count">0</span>)</span>
+                </a>
+                <a href="cart1.html">
+                    <span class="cart-icon">🛍️ (<span id="cart-count">0</span>)</span>
+                </a>
+            </div>-->
+        </div>
+        <div id="profile">
+            <button id="profile-btn" ng-click="toggleProfileMenu()">👤</button>
+            <div id="logout" ng-show="showProfileMenu">
+                <button ng-click="logout()">Logout</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <h1>Welcome, <span>{{ username }}</span>!</h1>
+        <h2>Your Wishlist and Cart will be different from the old one.</h2>
+        <!-- Add your wishlist and cart functionality here -->
+    </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="home.js"></script>
+</body>
+</html>

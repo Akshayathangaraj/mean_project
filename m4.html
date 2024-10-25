@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Carsten watch</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+   
+        <!-- Navigation bar -->
+        <nav>
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html">About Us</a></li>
+            <li><a href="index.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="logo">
+          <img src="logo.png" alt="WatchStore Logo" width="150">
+        </div>
+        <div class="sign">
+          <a href="sign.html" class="sign-btn">Sign Up / Sign In</a>
+        </div>
+      </div>
+  </header>
+
+  <main>
+    <section id="productPage">
+      <center><img src="m6.jpg" alt="Luxury Watch 1" width="300"></center>
+      <h2>Watch Description</h2>
+  <ul>
+    <p><strong>Brand:</strong> Carsten</p>
+    <li><strong>Case:</strong></li>
+      <ul>
+        <li>Material: Black stainless steel</li>
+        <li>Size: Appears to be 42-44mm</li>
+        <li>Shape: Round</li>
+        <li>Finish: Brushed and polished</li>
+      </ul>
+    <li><strong>Dial:</strong></li>
+      <ul>
+        <li>Color: Black</li>
+        <li>Indices: Arabic numerals and indices</li>
+        <li>Hands: Black and blue</li>
+        <li>Subdials: Three subdials for chronograph functions</li>
+        <li>Date window: At 3 o'clock</li>
+      </ul>
+    <li><strong>Movement:</strong></li>
+      <ul>
+        <li>Type: Quartz</li>
+        <li>Functions: Hours, minutes, seconds, chronograph, date</li>
+      </ul>
+    <li><strong>Bracelet:</strong></li>
+      <ul>
+        <li>Material: Black stainless steel</li>
+        <li>Style: Link bracelet</li>
+        <li>Clasp: Folding clasp with safety catch</li>
+      </ul>
+    <li><strong>Features:</strong></li>
+      <ul>
+        <li>Chronograph function with start, stop, and reset buttons</li>
+        <li>Date display</li>
+        <li>Water-resistant up to 5 ATM (50 meters)</li>
+      </ul>
+    <li><strong>Overall:</strong></li>
+      <ul>
+        <li>The Carsten watch showcases a sporty and modern design with a focus on functionality. The black stainless steel case and bracelet create a sleek and masculine look. The chronograph feature adds a touch of excitement and versatility, making it suitable for both casual and formal occasions.</li>
+      </ul>
+  </ul>
+      <p><strong>Price: 299.99</strong></p>
+      <p>Rating:</p>
+      <div class="watch-rating">★★★★☆ (4.5)</div>
+      <div class="watch-actions">
+        <button class="wishlist-btn">Add to Wishlist</button>
+        <button class="cart-btn">Add to Cart</button>
+      </div>
+    </section>
+  </main>
+  <script>
+    document.querySelectorAll('.wishlist-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        alert('Added to Wishlist!');
+      });
+    });
+    
+    document.querySelectorAll('.cart-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        alert('Added to Cart!');
+      });
+    });
+      </script>
+  <script src="script.js"></script>
+</body>
+</html>

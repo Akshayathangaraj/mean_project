@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rolex Watch</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+   
+        <!-- Navigation bar -->
+        <nav>
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html">About Us</a></li>
+            <li><a href="index.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="logo">
+          <img src="logo.png" alt="WatchStore Logo" width="150">
+        </div>
+        <div class="sign">
+          <a href="sign.html" class="sign-btn">Sign Up / Sign In</a>
+        </div>
+      </div>
+  </header>
+
+  <main>
+    <section id="productPage">
+    <center><img src="w2.jpg" alt="Luxury Watch 1" width="300"></center>
+        <h2>Watch Description</h2>
+        <ul>
+         <P> <strong>Brand: Rolex</P></strong>
+          <P>Model: Milgauss</P>
+          <strong>Case:</strong>
+            <ul>
+              <li>Material: Stainless steel</li>
+              <li>Finish: Brushed and polished</li>
+              <li>Size: 40mm</li>
+              <li>Crystal: Sapphire crystal with anti-reflective coating</li>
+            </ul>
+            <strong>Dial:</strong>
+            <ul>
+              <li>Color: Black</li>
+              <li>Indices: Luminescent hour markers and hands</li>
+              <li>Date window: At 3 o'clock</li>
+            </ul>
+            <strong>Movement:</strong>
+            <ul>
+              <li>Type: Automatic self-winding</li>
+              <li>Caliber: Rolex Caliber 3131</li>
+              <li>Functions: Hours, minutes, seconds, date</li>
+            </ul>
+            <strong>Bracelet:</strong>
+            <ul>
+              <li>Material: Stainless steel</li>
+              <li>Style: Oyster bracelet</li>
+              <li>Clasp: Folding clasp with safety catch</li>
+            </ul>
+            <strong>Features:</strong>
+            <ul>
+              <li>Anti-magnetic protection up to 1,000 Gauss</li>
+              <li>Officially certified Swiss chronometer</li>
+              <li>Bamford watch modification</li>
+            </ul>
+            <strong>Additional Notes:</strong>
+            <ul>
+              <li>The watch features a unique green-tinged sapphire crystal that is visible when viewed from certain angles.</li>
+              <li>The Bamford modification includes a black dial, black bezel, and black ceramic bezel insert.</li>
+            </ul>
+            <strong> overall:</strong>
+            <ul>
+              <li>This Rolex Milgauss is a sophisticated and stylish timepiece known for its exceptional anti-magnetic properties. The Bamford modification adds a modern and sporty touch to the classic design. This watch is perfect for those who appreciate fine craftsmanship and exceptional performance.</li>
+            </ul>
+        </ul>
+      <p><strong>Price: 599.99</strong></p>
+      <p>Rating:</p>
+      <div class="watch-rating">★★★★☆ (4.5)</div>
+      <div class="watch-actions">
+        <button class="wishlist-btn">Add to Wishlist</button>
+        <button class="cart-btn">Add to Cart</button>
+      </div>
+    </section>
+  </main>
+  <script>
+    document.querySelectorAll('.wishlist-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        alert('Added to Wishlist!');
+      });
+    });
+    
+    document.querySelectorAll('.cart-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        alert('Added to Cart!');
+      });
+    });
+      </script>
+  <script src="script.js"></script>
+</body>
+</html>

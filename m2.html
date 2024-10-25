@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hannah Martin Watch</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+   
+        <!-- Navigation bar -->
+        <nav>
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html">About Us</a></li>
+            <li><a href="index.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="logo">
+          <img src="logo.png" alt="WatchStore Logo" width="150">
+        </div>
+        <div class="sign">
+          <a href="sign.html" class="sign-btn">Sign Up / Sign In</a>
+        </div>
+      </div>
+  </header>
+
+  <main>
+    <section id="productPage">
+      <center><img src="m5.jpg" alt="Luxury Watch 1" width="300"></center>
+      <h2>Watch Description</h2>
+  <ul>
+    <p><strong>Brand:</strong> Hannah Martin</p>
+    <li><strong>Case:</strong></li>
+      <ul>
+        <li>Material: Rose gold-plated stainless steel</li>
+        <li>Size: Appears to be 32-36mm</li>
+        <li>Shape: Round</li>
+        <li>Finish: Polished</li>
+      </ul>
+    <li><strong>Dial:</strong></li>
+      <ul>
+        <li>Color: White</li>
+        <li>Indices: Classic Roman numerals</li>
+        <li>Hands: Rose gold-plated with colored accents</li>
+        <li>Date window: Not present</li>
+      </ul>
+    <li><strong>Movement:</strong></li>
+      <ul>
+        <li>Type: Quartz</li>
+        <li>Functions: Hours, minutes, seconds</li>
+      </ul>
+    <li><strong>Bracelet:</strong></li>
+      <ul>
+        <li>Material: Milanese mesh stainless steel</li>
+        <li>Color: Rose gold-plated</li>
+        <li>Clasp: Magnetic clasp</li>
+      </ul>
+    <li><strong>Features:</strong></li>
+      <ul>
+        <li>Water-resistant (level not specified)</li>
+        <li>Minimalist design</li>
+      </ul>
+    <li><strong>Overall:</strong></li>
+      <ul>
+        <li>The Hannah Martin watch showcases a classic and elegant design with a modern twist. The rose gold-plated case and Milanese mesh bracelet create a sophisticated and timeless look. The colored accents on the hands add a touch of personality and visual interest. The watch is perfect for everyday wear and can be easily dressed up or down.</li>
+      </ul>
+  </ul>
+      <p><strong>Price: 499.99</strong></p>
+      <p>Rating:</p>
+      <div class="watch-rating">★★★★☆ (4.5)</div>
+      <div class="watch-actions">
+        <button class="wishlist-btn">Add to Wishlist</button>
+        <button class="cart-btn">Add to Cart</button>
+      </div>
+    </section>
+  </main>
+  <script>
+    document.querySelectorAll('.wishlist-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        alert('Added to Wishlist!');
+      });
+    });
+    
+    document.querySelectorAll('.cart-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        alert('Added to Cart!');
+      });
+    });
+      </script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Cart</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Your Cart</h1>
+    <a href="index.html">Back to Home</a>
+  </header>
+
+  <main>
+    <div id="cart-items"></div> <!-- Cart items will be displayed here -->
+  </main>
+
+  <!-- Modal Structure -->
+  <div id="cart-modal" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); background:white; padding:20px; border:1px solid #ccc; z-index:1000;">
+    <h2>Item Details</h2>
+    <div id="cart-modal-content"></div> <!-- Cart item details will be displayed here -->
+    <button onclick="closeModal()">Close</button>
+  </div>
+
+  <script>
+    // Fetch cart from localStorage
+    let cart = JSON.parse(localStorage.getItem('guestCart')) || [];
+
+    // Function to display cart items
+    function displayCartItems() {
+      const cartContainer = document.getElementById('cart-items');
+      if (cart.length === 0) {
+        cartContainer.innerHTML = '<p>Your cart is empty.</p>';
+      } else {
+        cartContainer.innerHTML = '';  // Clear previous items
+        cart.forEach((item, index) => {
+          const itemElement = document.createElement('div');
+          itemElement.classList.add('cart-item');
+          itemElement.innerHTML = `
+            <img src="${item.image}" alt="${item.name}" style="width: 300px;" />
+           <h3><a href="${item.link}" class="watch-link">${item.name}</a></h3>
+            <p>${item.description}</p>
+            <p>Rating: ${item.rating}</p>
+            <button onclick="showItemDetails(${index})">View Details</button>
+            <button onclick="removeFromCart(${index})">Remove</button>
+          `;
+          cartContainer.appendChild(itemElement);
+        });
+      }
+    }
+
+    // Function to show item details in a modal
+    function showItemDetails(index) {
+      const item = cart[index];
+      const modalContent = document.getElementById('cart-modal-content');
+      modalContent.innerHTML = `
+        <img src="${item.image}" alt="${item.name}" />
+        <h3>${item.name}</h3>
+        <p>${item.description}</p>
+        <p>Rating: ${item.rating}</p>
+      `;
+      document.getElementById('cart-modal').style.display = 'block';
+    }
+
+    // Function to close the modal
+    function closeModal() {
+      document.getElementById('cart-modal').style.display = 'none';
+    }
+
+    // Function to remove item from cart
+    function removeFromCart(index) {
+      cart.splice(index, 1); // Remove the item from the array
+      localStorage.setItem('guestCart', JSON.stringify(cart)); // Use 'userCart' consistently
+      displayCartItems(); // Refresh the displayed items
+    }
+
+    // Initial call to display cart
+    displayCartItems();
+  </script>
+</body>
+</html>

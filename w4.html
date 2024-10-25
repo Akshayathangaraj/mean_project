@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Chanel Watch</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+   
+        <!-- Navigation bar -->
+        <nav>
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html">About Us</a></li>
+            <li><a href="index.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="logo">
+          <img src="logo.png" alt="WatchStore Logo" width="150">
+        </div>
+        <div class="sign">
+          <a href="sign.html" class="sign-btn">Sign Up / Sign In</a>
+        </div>
+      </div>
+  </header>
+
+  <main>
+    <section id="productPage">
+      <center><img src="w4.jpg" alt="Luxury Watch 1" width="300"></center>
+      <h2>Watch Description</h2>
+  <ul>
+    <p><strong>Brand:</strong> Chanel</p>
+    <p><strong>Model:</strong> J12</p>
+    <p><li><strong>Case:</strong></li></p>
+      <ul>
+        <li>Material: High-tech ceramic with 18k yellow gold bezel</li>
+        <li>Size: 38mm</li>
+        <li>Crystal: Scratch-resistant sapphire crystal</li>
+      </ul>
+    <li><strong>Dial:</strong></li>
+      <ul>
+        <li>Color: Black</li>
+        <li>Indices: Diamond hour markers and hands</li>
+        <li>Date window: At 3 o'clock</li>
+      </ul>
+    <li><strong>Movement:</strong></li>
+      <ul>
+        <li>Type: Quartz</li>
+        <li>Functions: Hours, minutes, seconds, date</li>
+      </ul>
+    <li><strong>Bracelet:</strong></li>
+      <ul>
+        <li>Material: High-tech ceramic with 18k yellow gold links</li>
+        <li>Clasp: Folding clasp with safety catch</li>
+      </ul>
+    <li><strong>Features:</strong></li>
+      <ul>
+        <li>Water-resistant up to 200 meters (656 feet)</li>
+        <li>Diamond-set bezel</li>
+      </ul>
+    <li><strong>Overall:</strong></li>
+      <ul>
+        <li>The Chanel J12 is a luxurious and iconic timepiece that combines modern design with exquisite craftsmanship. Its high-tech ceramic case and 18k yellow gold bezel offer a striking contrast, while the diamond-set bezel adds a touch of glamour. The J12 is a perfect choice for those who appreciate sophisticated and stylish timepieces.</li>
+      </ul>
+  </ul>
+      <p><strong>Price:499.99</strong></p>
+      <p>Rating:</p>
+      <div class="watch-rating">★★★★☆ (4.5)</div>
+      <div class="watch-actions">
+        <button class="wishlist-btn">Add to Wishlist</button>
+        <button class="cart-btn">Add to Cart</button>
+      </div>
+    </section>
+  </main>
+  <script>
+    document.querySelectorAll('.wishlist-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        alert('Added to Wishlist!');
+      });
+    });
+    
+    document.querySelectorAll('.cart-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        alert('Added to Cart!');
+      });
+    });
+      </script>
+  <script src="script.js"></script>
+</body>
+</html>

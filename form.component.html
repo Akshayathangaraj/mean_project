@@ -1,0 +1,29 @@
+<!-- form.component.html -->
+<form #registrationForm="ngForm" (ngSubmit)="onSubmit(registrationForm)">
+  <div>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" [(ngModel)]="user.name" required placeholder="Name">
+  </div>
+
+  <div>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" [(ngModel)]="user.email" required placeholder="Email">
+  </div>
+
+  <div>
+    <label for="phone">Phone:</label>
+    <input type="text" id="phone" name="phone" [(ngModel)]="user.phone" required pattern="^[0-9]{10}$" placeholder="Phone">
+  </div>
+
+  <div>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" [(ngModel)]="user.password" required placeholder="Password">
+  </div>
+
+  <div>
+    <label for="confirmPassword">Confirm Password:</label>
+    <input type="password" id="confirmPassword" name="confirmPassword" [(ngModel)]="user.confirmPassword" required placeholder="Confirm Password">
+  </div>
+
+  <button type="submit" [disabled]="!registrationForm.form.valid">Register</button>
+</form>
